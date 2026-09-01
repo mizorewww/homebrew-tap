@@ -7,7 +7,7 @@ class Course2md < Formula
   on_macos do
     on_arm do
       url "https://github.com/mizorewww/course2md/releases/download/v0.6.1/course2md-macos-arm64"
-      sha256 "b6efdb42be64c15c2f6840f6814ee3a4fc62eb13b46c93d3adc75e7de1fc1a9e"
+      sha256 "3f832b7689b178895e1b6494d3716847fef5d253ed6df6997691cafc2b028305"
 
       resource "mlx_metallib" do
         url "https://github.com/mizorewww/course2md/releases/download/v0.6.1/mlx-macos-arm64.metallib"
@@ -17,17 +17,17 @@ class Course2md < Formula
 
     on_intel do
       url "https://github.com/mizorewww/course2md/releases/download/v0.6.1/course2md-macos-x86_64"
-      sha256 "b73119d9b9413ce84e9c056a39f25a6fd66a9e515928de7ec0cccb5debe8a921"
+      sha256 "e14c50233d6970ae86243c762d5d4ad72175ee3ad8a9da8588ac9db11e28c02d"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/mizorewww/course2md/releases/download/v0.6.1/course2md-linux-x86_64"
-      sha256 "3a8982621045000c2318ccce5e3cf7dbb6fe96bd3dcf1ff6bb4374cc6a41b348"
+      sha256 "d0d3460f4476224cefe4fb44ce6b0a823b31c12ec03966ec4715c5c31f4b8f36"
     else
       url "https://github.com/mizorewww/course2md/releases/download/v0.6.1/course2md-linux-aarch64"
-      sha256 "497c87d3cf0ff8a7cba2947719a43542da3fab69f28665c6835ee389c80d2b3f"
+      sha256 "0d784262ec3f70a744f05184c717b2ac8ba11d9b98c47cdb6e534b793ed2b88a"
     end
   end
 
