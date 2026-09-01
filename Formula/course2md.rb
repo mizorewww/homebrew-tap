@@ -1,33 +1,33 @@
 class Course2md < Formula
   desc "Turn course videos (YouTube/Bilibili/local) into illustrated markdown/HTML notes"
   homepage "https://github.com/mizorewww/course2md"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/mizorewww/course2md/releases/download/v0.8.0/course2md-macos-arm64"
-      sha256 "b0d3b2d9b4c7d9f6ca1b336151fcbb3e03d90f9eba75f9c0a4f3ab343db8fc15"
+      url "https://github.com/mizorewww/course2md/releases/download/v0.8.1/course2md-macos-arm64"
+      sha256 "30c71a28b0da3f46a78353c7e8bdd967c86044f324cfebb30e59eaebfa418d22"
 
       resource "mlx_metallib" do
-        url "https://github.com/mizorewww/course2md/releases/download/v0.8.0/mlx-macos-arm64.metallib"
+        url "https://github.com/mizorewww/course2md/releases/download/v0.8.1/mlx-macos-arm64.metallib"
         sha256 "2b44fa0c3c66477fe205d58014ad1ff6e2ed8466ca2dd9c6111270710e021f98"
       end
     end
 
     on_intel do
-      url "https://github.com/mizorewww/course2md/releases/download/v0.8.0/course2md-macos-x86_64"
-      sha256 "fb01d3c0f6f80303a6bfd3ecb0e5854e636aeabdfb6a39d265941a834a0a934c"
+      url "https://github.com/mizorewww/course2md/releases/download/v0.8.1/course2md-macos-x86_64"
+      sha256 "49d20fc6ba4a65cd07764d13a9b5b857886b3a3e5714edf2e2dfec93c16e47b5"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mizorewww/course2md/releases/download/v0.8.0/course2md-linux-x86_64"
-      sha256 "4838906901803a11156b0ae099b3c5ca1f4505cf760d0dcd8ca082ba205e151b"
+      url "https://github.com/mizorewww/course2md/releases/download/v0.8.1/course2md-linux-x86_64"
+      sha256 "256ee5d5fbdcbed9a28bd9b84593faa453ea521c999e536fe4eef29f556c8891"
     else
-      url "https://github.com/mizorewww/course2md/releases/download/v0.8.0/course2md-linux-aarch64"
-      sha256 "762b762af9ddf77b93d027c1d3d2144dd953d3532878866e97aa4dec3ffb1ed7"
+      url "https://github.com/mizorewww/course2md/releases/download/v0.8.1/course2md-linux-aarch64"
+      sha256 "f18ffca3747cfafb3c4035234c709b52f012d4dff6ace80574ce7430089c6124"
     end
   end
 
