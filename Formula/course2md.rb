@@ -7,7 +7,7 @@ class Course2md < Formula
   on_macos do
     on_arm do
       url "https://github.com/mizorewww/course2md/releases/download/v1.2.0/course2md-macos-arm64"
-      sha256 "5864e8810f2d2fdf72cf02a380b37b26ca334b8158e7bc4e30a76a9a03bfbcd4"
+      sha256 "68912e32cdab2f56a854cae4b29ecece2f3f4326c958d3299c40dbe55d1f9fe6"
 
       resource "mlx_metallib" do
         url "https://github.com/mizorewww/course2md/releases/download/v1.2.0/mlx-macos-arm64.metallib"
@@ -17,7 +17,7 @@ class Course2md < Formula
 
     on_intel do
       url "https://github.com/mizorewww/course2md/releases/download/v1.2.0/course2md-macos-x86_64"
-      sha256 "e9e1a7066aa565e11e4461d1c7b36b06b4507d03386fce58fc198da3cf4f7f0e"
+      sha256 "7d6c2b517c24714e15fe08c22c0edc3c9d13158a7d0cb072ab5eede9092ef7d3"
     end
   end
 
