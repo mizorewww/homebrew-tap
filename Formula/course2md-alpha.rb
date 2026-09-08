@@ -4,7 +4,7 @@ class Course2mdAlpha < Formula
   version "2.0.0-alpha.1"
   license "MIT"
 
-  keg_only :versioned_formula
+  keg_only "it is the alpha prerelease channel"
 
   depends_on "ffmpeg"
   depends_on "yt-dlp"
