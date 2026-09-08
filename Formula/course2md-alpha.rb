@@ -1,4 +1,4 @@
-class Course2mdATalpha < Formula
+class Course2mdAlpha < Formula
   desc "Turn course videos (YouTube/Bilibili/local) into illustrated markdown/HTML notes"
   homepage "https://github.com/mizorewww/course2md"
   version "2.0.0-alpha.1"
