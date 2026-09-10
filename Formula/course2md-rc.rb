@@ -1,7 +1,7 @@
 class Course2mdRc < Formula
   desc "Turn course videos (YouTube/Bilibili/local) into illustrated markdown/HTML notes"
   homepage "https://github.com/mizorewww/course2md"
-  version "2.0.0-rc.1"
+  version "2.0.0-rc.2"
   license "MIT"
 
   keg_only "it is the rc prerelease channel"
@@ -11,28 +11,28 @@ class Course2mdRc < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.1/course2md-macos-arm64"
-      sha256 "39020de6bec1c4d243e27bea0875bb10d79f8e5b3866720978688cfd5b6b3dd6"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.2/course2md-macos-arm64"
+      sha256 "52e485d2ed5d15dce2c97c73a9c912130c960bb8ad01619aaf52a255b5e26135"
 
       resource "mlx_metallib" do
-        url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.1/mlx-macos-arm64.metallib"
+        url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.2/mlx-macos-arm64.metallib"
         sha256 "24d4cfcd3ca8b15ead691e46219f35adabbea64c9f8de4eae9bf293fd8d5eb7b"
       end
     end
 
     on_intel do
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.1/course2md-macos-x86_64"
-      sha256 "52e7cad88b981eb930ba83c4947cf06e7786ec69b3408f3ba8f7826176f28ff9"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.2/course2md-macos-x86_64"
+      sha256 "77802af66020aeb40203f7d1ec6abac4767e89407cf8a046d4bd8de971230b37"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.1/course2md-linux-x86_64"
-      sha256 "e66f09679d5ca94a45ccca263a244d89ef044abcfd898c0daff90519a6981dec"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.2/course2md-linux-x86_64"
+      sha256 "78f07f885a2e51910f45fbf4b2188b91fec3448aa4920cc3664fabbcb6a8cd73"
     else
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.1/course2md-linux-aarch64"
-      sha256 "ce812304148f9bbdb304ea54c007313ade4b7bbe3cc75f5cc4e73eab6652e8c6"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0-rc.2/course2md-linux-aarch64"
+      sha256 "9f5c97b2e779a2aada839400eea9d14a98bdba5e2ffcb4f9173974eca56e146c"
     end
   end
 
