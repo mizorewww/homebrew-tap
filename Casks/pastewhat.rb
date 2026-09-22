@@ -1,6 +1,6 @@
 cask "pastewhat" do
-  version "0.1.0"
-  sha256 "88a8c866ab163ce62561218a45bf49dd25b92d2042cedb2283d4af684a27102e"
+  version "0.1.1"
+  sha256 "2e01f279ce2b2d88bdaa931784b9550c49bede0a7a40528d52428dd0a86dd8a0"
 
   url "https://github.com/mizorewww/pastewhat/releases/download/v#{version}/PasteWhat-#{version}.zip"
   name "PasteWhat"
