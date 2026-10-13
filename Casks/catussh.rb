@@ -7,7 +7,7 @@ cask "catussh" do
   desc "SSH terminal, SFTP and server monitor built on Ghostty"
   homepage "https://github.com/mizorewww/catussh"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "catussh.app"
 
