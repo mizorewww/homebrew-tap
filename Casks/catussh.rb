@@ -1,6 +1,6 @@
 cask "catussh" do
-  version "2.5"
-  sha256 "25dffe9cabc8485a0a511e04cb299038de674ec596c50a6ea29c4fc6b951b79e"
+  version "2.5.1"
+  sha256 "e0ce6a877e8043dc32c28ac10f93e526cc7f947054fcf8a038d232c8b5603def"
 
   url "https://github.com/mizorewww/catussh/releases/download/v#{version}/catussh-#{version}.dmg"
   name "catussh"
