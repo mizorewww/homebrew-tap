@@ -1,6 +1,6 @@
 cask "course2md-gui@rc" do
-  version "2.0.0-rc.13"
-  sha256 "9ebb04441564c4543fff2a587f27a5e71825958b5b00d994f469e9c9cd58a5ff"
+  version "2.0.0-rc.14"
+  sha256 "9bc46b80fbf1fb9b9d713b9d379a5b897c41bfbe5e697992dbd49773aa1a128f"
 
   url "https://github.com/mizorewww/course2md/releases/download/v#{version}/course2md-gui-macos-arm64.dmg"
   name "course2md"
@@ -16,6 +16,7 @@ cask "course2md-gui@rc" do
   depends_on macos: :sequoia
   depends_on formula: "ffmpeg"
   depends_on formula: "yt-dlp"
+  depends_on formula: "aria2"
 
   app "course2md.app"
 
