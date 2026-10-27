@@ -1,16 +1,18 @@
 cask "course2md-gui" do
-  version "1.7.0"
-  sha256 "3802d5f5a14d79ad07636d9a33dd2020bc1b68f68ce41d6a1fd0a32cce4b526e"
+  version "2.0.0"
+  sha256 "3613b79107ac5813f537853d77cbfb237080d7a1944b293c82e8cdf5949e0065"
 
   url "https://github.com/mizorewww/course2md/releases/download/v#{version}/course2md-gui-macos-arm64.dmg"
   name "course2md"
   desc "Turn course videos into illustrated notes"
   homepage "https://github.com/mizorewww/course2md"
 
+  conflicts_with cask: ["course2md-gui@alpha", "course2md-gui@beta", "course2md-gui@rc"]
   depends_on arch: :arm64
   depends_on macos: :sequoia
   depends_on formula: "ffmpeg"
   depends_on formula: "yt-dlp"
+  depends_on formula: "aria2"
 
   app "course2md.app"
 

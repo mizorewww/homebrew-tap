@@ -1,38 +1,39 @@
 class Course2md < Formula
   desc "Turn course videos (YouTube/Bilibili/local) into illustrated markdown/HTML notes"
   homepage "https://github.com/mizorewww/course2md"
-  version "1.7.0"
+  version "2.0.0"
   license "MIT"
+
+  depends_on "ffmpeg"
+  depends_on "yt-dlp"
+  depends_on "aria2"
 
   on_macos do
     on_arm do
-      url "https://github.com/mizorewww/course2md/releases/download/v1.7.0/course2md-macos-arm64"
-      sha256 "0290087928d3603722c51845935e601abe5aaae3464790d2b562a2a0c20682f3"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0/course2md-macos-arm64"
+      sha256 "0fb4bb5e7abea37055b2b18acf57a028db49e58330a98f85aa29ca00c0ebdb9f"
 
       resource "mlx_metallib" do
-        url "https://github.com/mizorewww/course2md/releases/download/v1.7.0/mlx-macos-arm64.metallib"
-        sha256 "24d4cfcd3ca8b15ead691e46219f35adabbea64c9f8de4eae9bf293fd8d5eb7b"
+        url "https://github.com/mizorewww/course2md/releases/download/v2.0.0/mlx-macos-arm64.metallib"
+        sha256 "46e7a9b39d8404957b176f443149b449f2eadc2a37147f62c576c6a543d2a9df"
       end
     end
 
     on_intel do
-      url "https://github.com/mizorewww/course2md/releases/download/v1.7.0/course2md-macos-x86_64"
-      sha256 "8072d6756258901e580748070bdbe5c9e379910a96de1481f0fe1e51f2788f03"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0/course2md-macos-x86_64"
+      sha256 "ea5ec9098886e8f0f5afe386bce5cb32c05367844e6451930477e146656fbda6"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mizorewww/course2md/releases/download/v1.7.0/course2md-linux-x86_64"
-      sha256 "693a84a0f80124abd68b5d14df2f350122d08bc520a0cf8b59eebbd346bfb2f9"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0/course2md-linux-x86_64"
+      sha256 "aa9990163d44158d7fa2557599fbedfade9238cc7ca5251a26f4b9fe33b6e5c8"
     else
-      url "https://github.com/mizorewww/course2md/releases/download/v1.7.0/course2md-linux-aarch64"
-      sha256 "dc21cdfc3163ed52e41282d7c6a754f2f40386941a7141000ec7ffcd8eb72d7f"
+      url "https://github.com/mizorewww/course2md/releases/download/v2.0.0/course2md-linux-aarch64"
+      sha256 "7dd807fa8a7b52e10c5ed46cf836694e3b3ef9d8dcc59a993a830d5ba12fc865"
     end
   end
-
-  depends_on "ffmpeg"
-  depends_on "yt-dlp"
 
   def install
     binary = Dir["course2md-*"].first
@@ -47,14 +48,14 @@ class Course2md < Formula
     on_macos do
       on_arm do
         <<~EOS
-          Apple Silicon builds default to the CoreML backend (no extra
-          dependencies; models auto-download on first run).
+          Apple Silicon builds include native speech recognition.
+          Models download on first use and load from the local cache afterwards.
         EOS
       end
     end
   end
 
   test do
-    assert_match "course2md", shell_output("#{bin}/course2md --version")
+    assert_match "course2md #{version}", shell_output("#{bin}/course2md --version")
   end
 end
