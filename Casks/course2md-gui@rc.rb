@@ -1,6 +1,6 @@
 cask "course2md-gui@rc" do
-  version "2.0.0-rc.17"
-  sha256 "d0351afd70df9f39e4d5a7dff2e5722858f503afcb412efccf67fe6ca6217ec1"
+  version "2.0.0-rc.18"
+  sha256 "3624e3b13e758d1f87ceb697e21ada0d2838149ff8d952dea50acd5098d7ae25"
 
   url "https://github.com/mizorewww/course2md/releases/download/v#{version}/course2md-gui-macos-arm64.dmg"
   name "course2md"
