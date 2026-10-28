@@ -1,6 +1,6 @@
 cask "course2md-gui" do
-  version "2.0.0"
-  sha256 "3613b79107ac5813f537853d77cbfb237080d7a1944b293c82e8cdf5949e0065"
+  version "2.0.1"
+  sha256 "c1f974ce89bc30d0282c747d6f776a8f4674250dec4064132ed5de46c9acdc36"
 
   url "https://github.com/mizorewww/course2md/releases/download/v#{version}/course2md-gui-macos-arm64.dmg"
   name "course2md"
@@ -10,7 +10,9 @@ cask "course2md-gui" do
   conflicts_with cask: ["course2md-gui@alpha", "course2md-gui@beta", "course2md-gui@rc"]
   depends_on arch: :arm64
   depends_on macos: :sequoia
-  depends_on formula: "ffmpeg"
+  # The app bundles a signed ffmpeg and runs it before any on PATH, so a
+  # Homebrew ffmpeg would go unused. yt-dlp stays: it updates more often than
+  # the app, and the engine falls back to it.
   depends_on formula: "yt-dlp"
   depends_on formula: "aria2"
 
