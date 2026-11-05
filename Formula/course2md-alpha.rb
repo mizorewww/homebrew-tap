@@ -1,7 +1,7 @@
 class Course2mdAlpha < Formula
   desc "Turn course videos (YouTube/Bilibili/local) into illustrated markdown/HTML notes"
   homepage "https://github.com/mizorewww/course2md"
-  version "3.0.0-alpha.1"
+  version "3.0.0-alpha.2"
   license "MIT"
 
   keg_only "it is the alpha prerelease channel"
@@ -11,34 +11,34 @@ class Course2mdAlpha < Formula
   depends_on "aria2"
 
   resource "third_party_licenses" do
-    url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.1/course2md-third-party-licenses.txt"
-    sha256 "ac5e997a1bf38c6c45566b33d17943b2e6b698bdfe70aa5a2d275b9672d1572b"
+    url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.2/course2md-third-party-licenses.txt"
+    sha256 "a742fbc97cdf547a000a0182ccbf3fad537f9792ec1eb4e75f71b550bd3aee5b"
   end
 
   on_macos do
     on_arm do
-      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.1/course2md-macos-arm64"
-      sha256 "8d413cbac23875e7f58a5ff666644a69851699bc841b6990b2fcdbd88dd2d446"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.2/course2md-macos-arm64"
+      sha256 "4889eae495384e0df81978d23fb8d7d6d0553389bbdd560855ddf791e38621cb"
 
       resource "mlx_metallib" do
-        url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.1/mlx-macos-arm64.metallib"
+        url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.2/mlx-macos-arm64.metallib"
         sha256 "24d4cfcd3ca8b15ead691e46219f35adabbea64c9f8de4eae9bf293fd8d5eb7b"
       end
     end
 
     on_intel do
-      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.1/course2md-macos-x86_64"
-      sha256 "4073687837c0d8f9ad9013ec1ecff715a16a416d0307b8d0858e4994ce121de9"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.2/course2md-macos-x86_64"
+      sha256 "134787be237e4a0a71216c125f683ff2ce6f38d4766f02bec65c8132eadb9a07"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.1/course2md-linux-x86_64"
-      sha256 "614ad341680d48e45908beaa7206310697bc25d29372aa074fe4a2dec3a08ebf"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.2/course2md-linux-x86_64"
+      sha256 "875fb7e97132f5f922cd013468e7ba818b02eb9017bc889c2f820d2d0d74cc37"
     else
-      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.1/course2md-linux-aarch64"
-      sha256 "8a7e0a75d2de0a5981b4fa719482f12bcbab0aee7c1b2b8c82210690e86c4977"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0-alpha.2/course2md-linux-aarch64"
+      sha256 "e860192f446f3f98c438bdd3b7938c304a472875c9e7cf007c79c3e1bd14a603"
     end
   end
 
