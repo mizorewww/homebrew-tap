@@ -1,43 +1,49 @@
 class Course2md < Formula
   desc "Turn course videos (YouTube/Bilibili/local) into illustrated markdown/HTML notes"
   homepage "https://github.com/mizorewww/course2md"
-  version "2.0.1"
+  version "3.0.0"
   license "MIT"
 
   depends_on "ffmpeg"
   depends_on "yt-dlp"
   depends_on "aria2"
 
+  resource "third_party_licenses" do
+    url "https://github.com/mizorewww/course2md/releases/download/v3.0.0/course2md-third-party-licenses.txt"
+    sha256 "0f2dd981dfc88c940d3b91786c73b4485d5d679ff0a1ce332735014fca15defc"
+  end
+
   on_macos do
     on_arm do
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.1/course2md-macos-arm64"
-      sha256 "ac3cdf909214cf46a79fa6ce80a320d2cd69c5925ca4c23bd3e24872d92bf061"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0/course2md-macos-arm64"
+      sha256 "58b481ac6f4b558c85428ebbe8b00c1dffa775e24b7d9fbb10b6a0a86125941c"
 
       resource "mlx_metallib" do
-        url "https://github.com/mizorewww/course2md/releases/download/v2.0.1/mlx-macos-arm64.metallib"
-        sha256 "46e7a9b39d8404957b176f443149b449f2eadc2a37147f62c576c6a543d2a9df"
+        url "https://github.com/mizorewww/course2md/releases/download/v3.0.0/mlx-macos-arm64.metallib"
+        sha256 "24d4cfcd3ca8b15ead691e46219f35adabbea64c9f8de4eae9bf293fd8d5eb7b"
       end
     end
 
     on_intel do
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.1/course2md-macos-x86_64"
-      sha256 "2d26587af13bd36d138faaf6c8f86fd0a69b85f093a6f884b8b3a9644f47188d"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0/course2md-macos-x86_64"
+      sha256 "3517085271d50547defdeb838e439cb95e83798b392f4c364fd265886dca9e72"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.1/course2md-linux-x86_64"
-      sha256 "3899be0f2006251187519fce79e78fc9f9a6c4bc944dd78b9d1954876ece219a"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0/course2md-linux-x86_64"
+      sha256 "ac24b1d1bb8c193fda3071894a5381c58d34949fedc363a25e07bf42d19491fa"
     else
-      url "https://github.com/mizorewww/course2md/releases/download/v2.0.1/course2md-linux-aarch64"
-      sha256 "06c4618994972be2984bee677ca0205dc1789266a725ad97424bdf12a9e05d41"
+      url "https://github.com/mizorewww/course2md/releases/download/v3.0.0/course2md-linux-aarch64"
+      sha256 "2f9dacb7a6436eec6ba4f6d461b48f8f54efcfcb1c4047ba989d07107b56b9dc"
     end
   end
 
   def install
     binary = Dir["course2md-*"].first
     bin.install binary => "course2md"
+    resource("third_party_licenses").stage { doc.install "course2md-third-party-licenses.txt" => "THIRD-PARTY-LICENSES.txt" }
     # MLX Metal kernels：CoreML 推理需要与二进制同目录（macOS arm64）
     if OS.mac? && Hardware::CPU.arm?
       resource("mlx_metallib").stage { bin.install "mlx-macos-arm64.metallib" => "mlx.metallib" }
